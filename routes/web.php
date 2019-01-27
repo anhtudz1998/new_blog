@@ -14,6 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/hihi',function(){
-	return ('hihihihihi');
+Route::group(['prefix'=>'admin'],function(){
+	Route::get('/home','Admin\AdminController@getHome');
+	Route::group(['prefix'=>'category'],function(){
+		Route::get('list','Admin\CategoryController@getList');
+
+		
+		Route::get('add','Admin\CategoryController@getAdd');
+		Route::get('edit','Admin\CategoryController@getEdit');
+
+
+	});
 });

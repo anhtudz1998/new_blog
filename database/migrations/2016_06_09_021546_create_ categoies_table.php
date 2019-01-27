@@ -12,7 +12,7 @@ class CreateCategoiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('TheLoai', function (Blueprint $table) {
+        Schema::create('categoties', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
